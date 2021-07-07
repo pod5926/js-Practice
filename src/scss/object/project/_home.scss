@@ -11,6 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 100px;
   }
 
   &__box {
@@ -19,6 +20,25 @@
     align-items: center;
     padding: 10px;
     width: 50%;
+  }
+
+  &__slide {
+    margin: 0 auto;
+    width: 720px;
+    // background-color: black;
+    border: 1px solid black;
+  }
+
+  &__toolbar {
+    overflow: hidden;
+    text-align: center;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0;
   }
 
   &__item {
@@ -40,4 +60,22 @@
 .js-fizzBuzz {
   background-color: black;
   color: white;
+}
+
+img {
+  max-width: 100%;
+}
+
+#prev {
+  margin-right: 0.5rem;
+  width: 40px;
+  height: 40px;
+  background: url('#{$bgPath}arr.svg') no-repeat;
+  transform: rotate(-180deg);
+}
+#next {
+  margin-left: 0.5rem;
+  width: 40px;
+  height: 40px;
+  background: url('#{$bgPath}arr.svg') no-repeat;
 }

@@ -115,8 +115,16 @@ window.addEventListener('load', () => {
         document.querySelector('.fB-list').insertAdjacentHTML('beforeend', `<li>${fizzBuzz(num)}`);
       }
       console.log('ok');
-
   })
+
+  // imgchange
+  document.getElementById('prev').addEventListener('click', () => {
+    changeImg(-1);
+  })
+  document.getElementById('next').addEventListener('click', () => {
+    changeImg(1);
+  })
+  console.log(imgList);
 })
 
 function fizzBuzz(num) {
@@ -131,3 +139,35 @@ function fizzBuzz(num) {
     return (num);
   }
 }
+  let count = 0;
+  const imgList = [
+    {
+      title: 'sushi', src: './assets/images/img1.jpg', alt: 'sushi'
+    },
+    {
+      title: 'sushi', src: './assets/images/img2.jpg', alt: 'sushi'
+    },
+    {
+      title: 'sushi', src: './assets/images/img3.jpg', alt: 'sushi'
+    },
+    {
+      title: 'sushi', src: './assets/images/img4.jpg', alt: 'sushi'
+    },
+    {
+      title: 'sushi', src: './assets/images/img5.jpg', alt: 'sushi'
+    }
+  ];
+
+function changeImg(num) {
+  if (count + num >= 0 && count + num < imgList.length) {
+    count += num;
+    document.getElementById('setImg').src = imgList[count].src;
+    pageNum();
+  }
+}
+
+function pageNum() {
+  document.getElementById('page').textContent = `${count + 1}/${imgList.length}`;
+}
+
+pageNum();
